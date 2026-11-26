@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เข้าสู่ระบบ | เที่ยวบ้านเรา</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <p class="site-name">เที่ยวบ้านเรา</p>
+    <nav aria-label="เมนูหลัก">
+      <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="places.html">ที่เที่ยว</a></li>
+        <li><a href="food.html">อาหาร</a></li>
+        <li><a href="plan.html">วางแผนเที่ยว</a></li>
+        <li><a href="travel.html">ข้อมูลการเดินทาง</a></li>
+        <li><a href="login.html" aria-current="page">เข้าสู่ระบบ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card login-box">
+      <h1>เข้าสู่ระบบสมาชิก</h1>
+      <p>เข้าสู่ระบบเพื่อบันทึกแผนการท่องเที่ยวและรับส่วนลดร้านค้าในชุมชน</p>
+      
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">ชื่อผู้ใช้งาน หรือ อีเมล</label>
+          <input type="text" id="username" name="username" placeholder="กรอกชื่อผู้ใช้งาน" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">รหัสผ่าน</label>
+          <input type="password" id="password" name="password" placeholder="กรอกรหัสผ่าน" required>
+        </div>
+
+        <button type="submit" class="button btn-full">เข้าสู่ระบบ</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>ณัฐนันท์ 049 | ใบงานฝึกปฏิบัติวิชาการสร้างเว็บไซต์ทางธุรกิจ</p>
+  </footer>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = document.getElementById('username').value;
+      alert('ยินดีต้อนรับคุณ ' + user + ' เข้าสู่ระบบเที่ยวบ้านเรา!');
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

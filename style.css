@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    line-height: 1.65;
+    color: #55434c;
+    background: #FFF0F5;
+}
+
+header, footer {
+    padding: 1rem;
+    color: #754B5C;
+    background: #F3C6D7;
+}
+
+.site-name {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    padding: 0.35rem 0.75rem;
+    color: #ffffff;
+    border-radius: 0.35rem;
+    text-decoration: none;
+}
+
+nav a:hover, nav a[aria-current="page"] {
+    background: #FCE4EC;
+    color: #AD5578;
+}
+
+a:focus-visible {
+    outline: 3px solid #D77FA0;
+    outline-offset: 3px;
+}
+
+main {
+    width: min(92%, 56rem);
+    margin: 2rem auto;
+}
+
+.card {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid #F2D2DF;
+    border-radius: 0.75rem;
+    background: #FFFFFF;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 0.35rem;
+    background: #E9A9C1;
+    color: white;
+    text-decoration: none;
+}
+
+.gallery-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.gallery-list img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .gallery-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.slider-container {
+  width: 100%;
+  max-width: 600px; /* ปรับขนาดความกว้างตามต้องการ */
+  margin: 2rem auto;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* กล่องบรรจุภาพทั้งหมดเรียงต่อกันในแนวนอน */
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* ซ่อน Scrollbar ใน Firefox */
+}
+
+/* ซ่อน Scrollbar ใน Chrome, Safari และ Edge */
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* แต่ละสไลด์ */
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+/* รูปภาพในสไลด์ */
+.slide img {
+  width: 100%;
+  height: 350px; /* ปรับความสูงของรูปได้ตามต้องการ */
+  object-fit: cover;
+  display: block;
+}
+
+/* ปุ่มนำทาง (จุดวงกลมด้านล่าง) */
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.slider-nav a {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.slider-nav a:hover,
+.slider-nav a:focus {
+  background-color: rgba(255, 255, 255, 1);
+}
